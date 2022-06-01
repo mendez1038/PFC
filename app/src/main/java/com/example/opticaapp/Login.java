@@ -29,6 +29,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // Asociamos los elementos a las variables
         signUpVisibility = findViewById(R.id.btn_signup);
         loginVisibility = findViewById(R.id.btn_login2);
         signUpActivity = findViewById(R.id.btn_signup2);
@@ -41,31 +42,29 @@ public class Login extends AppCompatActivity {
         layout = findViewById(R.id.layout);
         layout2 = findViewById(R.id.layout2);
 
-        signUpVisibility.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                name.setVisibility(View.VISIBLE);
-                surname.setVisibility(View.VISIBLE);
-                phone.setVisibility(View.VISIBLE);
-                password.setVisibility(View.GONE);
-                loginActivity.setVisibility(View.GONE);
-                signUpActivity.setVisibility(View.VISIBLE);
-                layout.setVisibility(View.GONE);
-                layout2.setVisibility(View.VISIBLE);
-            }
+
+        // Cambiamos el diseño al pulsar en el botón de crear cuenta
+        signUpVisibility.setOnClickListener(v -> {
+            name.setVisibility(View.VISIBLE);
+            surname.setVisibility(View.VISIBLE);
+            phone.setVisibility(View.VISIBLE);
+            password.setVisibility(View.GONE);
+            loginActivity.setVisibility(View.GONE);
+            signUpActivity.setVisibility(View.VISIBLE);
+            layout.setVisibility(View.GONE);
+            layout2.setVisibility(View.VISIBLE);
         });
-        loginVisibility.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                name.setVisibility(View.GONE);
-                surname.setVisibility(View.GONE);
-                phone.setVisibility(View.GONE);
-                password.setVisibility(View.VISIBLE);
-                loginActivity.setVisibility(View.VISIBLE);
-                signUpActivity.setVisibility(View.GONE);
-                layout.setVisibility(View.VISIBLE);
-                layout2.setVisibility(View.GONE);
-            }
+
+        // Cambiamos el diseño al pulsar en el botón de iniciar sesión
+        loginVisibility.setOnClickListener(v -> {
+            name.setVisibility(View.GONE);
+            surname.setVisibility(View.GONE);
+            phone.setVisibility(View.GONE);
+            password.setVisibility(View.VISIBLE);
+            loginActivity.setVisibility(View.VISIBLE);
+            signUpActivity.setVisibility(View.GONE);
+            layout.setVisibility(View.VISIBLE);
+            layout2.setVisibility(View.GONE);
         });
 
     }
