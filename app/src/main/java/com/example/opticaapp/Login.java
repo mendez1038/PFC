@@ -2,6 +2,7 @@ package com.example.opticaapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -67,5 +68,16 @@ public class Login extends AppCompatActivity {
             layout2.setVisibility(View.GONE);
         });
 
+        signUpActivity.setOnClickListener(v -> {
+            Intent intent=new Intent(Login.this, Home.class);
+            startActivity(intent);
+            finish();
+        });
+
+        loginActivity.setOnClickListener(v -> {
+            Intent intent=new Intent(Login.this, Home.class);
+            startActivity(intent);
+            finish();
+        });
     }
 }

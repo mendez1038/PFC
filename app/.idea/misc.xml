@@ -3,7 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/layout/activity_home.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/drawable/ajustes.xml" value="0.2465" />
+        <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/drawable/bg_ajustes.xml" value="0.124" />
+        <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/drawable/bg_catalogo.xml" value="0.2465" />
+        <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/drawable/bg_cerrar_sesion.xml" value="0.2465" />
+        <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/drawable/bg_perfil.xml" value="0.2465" />
+        <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/drawable/catalogo.xml" value="0.2465" />
+        <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/drawable/cerrar_sesion.xml" value="0.2465" />
+        <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/drawable/input.xml" value="0.2465" />
+        <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/drawable/menu_corner.xml" value="0.2465" />
+        <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/drawable/perfil.xml" value="0.2465" />
+        <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/layout/activity_login.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/layout/activity_main.xml" value="0.11302083333333333" />
       </map>
