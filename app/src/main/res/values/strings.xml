@@ -19,4 +19,11 @@
     <string name="customers">Gestión clientes</string>
     <string name="management">Gestión catálogo</string>
     <string name="Empty">Por definir</string>
+    <string name="i_d">I - D</string>
+    <string name="miopia">Miopía</string>
+    <string name="hipermetropia">Hipermetropía</string>
+    <string name="astigmatismo">Astigmatismo</string>
+    <string name="comentarios">Comentarios</string>
+    <string name="escribir_texto">Escribir texto</string>
+    <string name="save">Guardar</string>
 </resources>

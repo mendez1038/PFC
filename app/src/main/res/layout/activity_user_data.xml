@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".UserData">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/background"
+        android:scaleType="centerCrop"
+         />
+
+    <!-- android:src="@drawable/wallpaper" -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#d8000000">
 
         <TextView
             android:id="@+id/textView"
@@ -16,6 +30,7 @@
             android:textColor="@color/white"
             android:textSize="28sp"
             android:gravity="center"
+
             />
 
     <LinearLayout
@@ -53,12 +68,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="I - D"
+                    android:text="@string/i_d"
                     android:paddingStart="20dp"
                     android:paddingTop="10dp"
                     android:paddingEnd="20dp"
                     android:paddingBottom="10dp"
                     android:gravity="center"
+                    android:textSize="18sp"
                     />
 
             </LinearLayout>
@@ -87,11 +103,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Miopía"
+                    android:text="@string/miopia"
                     android:paddingStart="20dp"
                     android:paddingTop="10dp"
                     android:paddingEnd="20dp"
                     android:paddingBottom="10dp"
+                    android:textSize="16sp"
                     />
 
             </LinearLayout>
@@ -113,8 +130,10 @@
                     android:paddingEnd="20dp"
                     android:paddingBottom="10dp"
                     android:gravity="center"
+                    android:textSize="16sp"
                     />
                 <EditText
+                    android:inputType="text"
                     android:visibility="gone"
                     android:id="@+id/et_miopia"
                     android:layout_width="match_parent"
@@ -129,7 +148,7 @@
                     android:textColorHint="#999"
                     android:gravity="center"
                     android:textSize="16sp"
-                    />
+                    android:importantForAutofill="no" />
 
             </LinearLayout>
 
@@ -157,11 +176,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hipermetropía"
+                    android:text="@string/hipermetropia"
                     android:paddingStart="20dp"
                     android:paddingTop="10dp"
                     android:paddingEnd="20dp"
                     android:paddingBottom="10dp"
+                    android:textSize="16sp"
                     />
 
             </LinearLayout>
@@ -183,8 +203,10 @@
                     android:paddingEnd="20dp"
                     android:paddingBottom="10dp"
                     android:gravity="center"
+                    android:textSize="16sp"
                     />
                 <EditText
+                    android:inputType="text"
                     android:visibility="gone"
                     android:id="@+id/et_hm"
                     android:layout_width="match_parent"
@@ -199,7 +221,7 @@
                     android:textColorHint="#999"
                     android:gravity="center"
                     android:textSize="16sp"
-                    />
+                    android:importantForAutofill="no" />
             </LinearLayout>
 
 
@@ -226,11 +248,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Astigmatismo"
+                    android:text="@string/astigmatismo"
                     android:paddingStart="20dp"
                     android:paddingTop="10dp"
                     android:paddingEnd="20dp"
                     android:paddingBottom="10dp"
+                    android:textSize="16sp"
                     />
 
             </LinearLayout>
@@ -269,7 +292,8 @@
                     android:paddingEnd="20dp"
                     android:paddingBottom="10dp"
                     android:textSize="16sp"
-                    />
+                    android:importantForAutofill="no"
+                    android:inputType="text" />
 
             </LinearLayout>
 
@@ -297,11 +321,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Comentarios"
+                    android:text="@string/comentarios"
                     android:paddingStart="20dp"
                     android:paddingTop="10dp"
                     android:paddingEnd="20dp"
                     android:paddingBottom="10dp"
+                    android:textSize="16sp"
                     />
 
             </LinearLayout>
@@ -322,11 +347,12 @@
                     android:paddingTop="10dp"
                     android:paddingEnd="20dp"
                     android:paddingBottom="10dp"
+                    android:textSize="16sp"
                     />
                 <EditText
                     android:visibility="gone"
                     android:textColorHint="#999"
-                    android:hint="Escribir texto"
+                    android:hint="@string/escribir_texto"
                     android:id="@+id/et_comentarios"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -337,7 +363,8 @@
                     android:paddingEnd="10dp"
                     android:paddingBottom="10dp"
                     android:textSize="16sp"
-                    />
+                    android:importantForAutofill="no"
+                    android:inputType="text" />
 
             </LinearLayout>
 
@@ -349,11 +376,11 @@
             android:id="@+id/btn_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Guardar"
+            android:text="@string/save"
             android:textColor="@color/black"
             />
     </LinearLayout>
 
 
-
-</LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

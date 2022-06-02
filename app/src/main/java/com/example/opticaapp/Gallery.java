@@ -1,9 +1,10 @@
 package com.example.opticaapp;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Galery extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Gallery extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

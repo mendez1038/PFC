@@ -17,7 +17,7 @@
             android:name=".UserData"
             android:exported="false" />
         <activity
-            android:name=".Galery"
+            android:name=".Gallery"
             android:exported="false" />
         <activity
             android:name=".Home"
