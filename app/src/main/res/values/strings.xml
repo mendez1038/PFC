@@ -18,4 +18,5 @@
     <string name="Settings">Ajustes</string>
     <string name="customers">Gestión clientes</string>
     <string name="management">Gestión catálogo</string>
+    <string name="Empty">Por definir</string>
 </resources>
