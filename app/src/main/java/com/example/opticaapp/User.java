@@ -4,6 +4,7 @@ import android.content.ContentValues;
 
 public class User {
 
+    // Atributos
     private String nickname;
     private String name;
     private String surname;
@@ -15,6 +16,7 @@ public class User {
     private String comments;
     private String rol;
 
+    // Constructor
     public User(String nickname, String name, String surname, String phone, String password, String miopia, String hm, String astigmatismo,String comments, String rol){
         this.nickname = nickname;
         this.name = name;
@@ -28,46 +30,68 @@ public class User {
         this.rol = rol;
     }
 
+    // Getters & Setters
     public String getPassword() {
         return password;
     }
+
+    public void setPassword(String pw){password = pw;}
 
     public String getNickname() {
         return nickname;
     }
 
+    public void setNickname(String s){nickname = s;}
+
     public String getName() {
         return name;
     }
+
+    public void setName(String s){name = s;}
 
     public String getSurname() {
         return surname;
     }
 
+    public void setSurname(String s){surname = s;}
+
     public String getPhone() {
         return phone;
     }
+
+    public void setPhone(String s){phone = s;}
 
     public String getMiopia() {
         return miopia;
     }
 
+    public void setMiopia(String s){miopia = s;}
+
     public String getHm() {
         return hm;
     }
+
+    public void setHm(String s){hm = s;}
 
     public String getAstigmatismo() {
         return astigmatismo;
     }
 
+    public void setAstigmatismo(String s){astigmatismo = s;}
+
     public String getComments() {
         return comments;
     }
+
+    public void setComments(String s){comments = s;}
 
     public String getRol() {
         return rol;
     }
 
+    public void setRol(String s){rol = s;}
+
+    // Método para insertar valores
     public ContentValues toContentValues() {
         ContentValues values = new ContentValues();
         values.put(UserContract.UserEntry.NICKNAME, nickname);

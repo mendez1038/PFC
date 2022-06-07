@@ -68,12 +68,15 @@ public class Login extends AppCompatActivity {
             layout2.setVisibility(View.GONE);
         });
 
+
+        // Cambiamos de Activity al iniciar sesión
         signUpActivity.setOnClickListener(v -> {
             Intent intent=new Intent(Login.this, Home.class);
             startActivity(intent);
             finish();
         });
 
+        // Cambiamos de Activity al hacer el registro
         loginActivity.setOnClickListener(v -> {
             Intent intent=new Intent(Login.this, Home.class);
             startActivity(intent);
@@ -81,6 +84,7 @@ public class Login extends AppCompatActivity {
         });
     }
 
+    // Cancelamos la función de la flecha hacia atrás
     @Override
     public void onBackPressed() {
         //super.onBackPressed();

@@ -17,14 +17,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-            // Creamos el splash para que la portada dure 2 segundos
+            // Creamos el splash para que la portada y la contraportada duren 2 segundos
             new Timer().schedule(new TimerTask(){
                 @Override
                 public void run(){
                     Bundle bundle = getIntent().getExtras();
                     if (bundle!= null){
                         String vision = bundle.getString("key", "intro");
-                        if (vision.equals("outtro")){
+                        if (vision.equals("Out tro")){
                             System.exit(0);
                         }else {
                             Intent intent=new Intent(MainActivity.this, Login.class);

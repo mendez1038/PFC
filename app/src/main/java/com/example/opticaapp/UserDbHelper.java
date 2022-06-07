@@ -1,6 +1,7 @@
 package com.example.opticaapp;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -75,7 +76,21 @@ public class UserDbHelper extends SQLiteOpenHelper {
         return db.insert(PhotoContract.PhotoEntry.TABLE_NAME, null, photo.toContentValues());
     }
 
+    public Cursor getAllUsers(){
+        return getReadableDatabase().query(UserContract.UserEntry.TABLE_NAME,null,null,null,null,null,null, null);
+    }
 
+    public Cursor getUserByNick(String nick){
+        return getReadableDatabase().query(UserContract.UserEntry.TABLE_NAME,null, UserContract.UserEntry.NICKNAME + "LIKE ?", new String[]{nick}, null, null, null, null);
+    }
+
+    public Cursor getAllPhotos(){
+        return getReadableDatabase().query(PhotoContract.PhotoEntry.TABLE_NAME,null,null,null,null,null,null, null);
+    }
+
+    public Cursor getPhotoById(String id){
+        return getReadableDatabase().query(PhotoContract.PhotoEntry.TABLE_NAME,null, PhotoContract.PhotoEntry.ID + "LIKE ?", new String[]{id}, null, null, null, null);
+    }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

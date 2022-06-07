@@ -11,7 +11,6 @@ import android.widget.Toast;
 public class Home extends AppCompatActivity {
 
     //Init variables
-
     LinearLayout profile;
     LinearLayout catalogue;
     LinearLayout settings;
@@ -24,6 +23,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        // Asociamos las variables a sus valores
         profile = findViewById(R.id.btn_profile);
         catalogue = findViewById(R.id.btn_catalogue);
         settings = findViewById(R.id.btn_settings);
@@ -31,6 +31,8 @@ public class Home extends AppCompatActivity {
         customerList = findViewById(R.id.btn_customerList);
         photosList = findViewById(R.id.btn_photosList);
 
+
+        // Acciones al hacer click en los botones de Perfil, Catalogo, Ajustes, Cerrar Sesión, Lista de Clientes y Lista de Fotos
         profile.setOnClickListener(v -> {
             Intent intent=new Intent(Home.this, UserData.class);
             startActivity(intent);
@@ -43,23 +45,24 @@ public class Home extends AppCompatActivity {
             finish();
         });
 
-        settings.setOnClickListener(v -> Toast.makeText(getApplicationContext(),"Ajustes",Toast.LENGTH_SHORT).show());
+        settings.setOnClickListener(v -> Toast.makeText(getApplicationContext(),R.string.Settings,Toast.LENGTH_SHORT).show());
 
         logout.setOnClickListener(v -> {
             Intent intent=new Intent(Home.this, MainActivity.class);
             Bundle b = new Bundle();
-            b.putString("key","outtro");
+            b.putString("key","Out tro");
             intent.putExtras(b);
             startActivity(intent);
             finish();
         });
 
-        customerList.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Lista clientes",Toast.LENGTH_SHORT).show());
+        customerList.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Customer List",Toast.LENGTH_SHORT).show());
 
-        photosList.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Lista fotos",Toast.LENGTH_SHORT).show());
+        photosList.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Photos List",Toast.LENGTH_SHORT).show());
 
     }
 
+    // Cancelamos la función de la flecha hacia atrás
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
