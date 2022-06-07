@@ -3,27 +3,24 @@ package com.example.opticaapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
 
     // Init variables
-    Button signUpVisibility;
-    Button loginVisibility;
-    Button signUpActivity;
-    Button loginActivity;
-    Button password;
+    Button signUpVisibility,loginVisibility,signUpActivity,loginActivity,password;
 
-    EditText name;
-    EditText surname;
-    EditText phone;
+    EditText nickname, pw, name,surname,phone;
 
-    LinearLayout layout;
-    LinearLayout layout2;
+    LinearLayout layout,layout2;
+
+    DbHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +33,15 @@ public class Login extends AppCompatActivity {
         signUpActivity = findViewById(R.id.btn_signup2);
         loginActivity = findViewById(R.id.btn_login);
 
+        nickname = findViewById(R.id.nickname);
+        pw = findViewById(R.id.password);
         name = findViewById(R.id.name);
         surname = findViewById(R.id.surname);
         phone = findViewById(R.id.phone);
         password = findViewById(R.id.btn_password);
         layout = findViewById(R.id.layout);
         layout2 = findViewById(R.id.layout2);
+        dbHandler = new DbHandler(Login.this);
 
 
         // Cambiamos el diseño al pulsar en el botón de crear cuenta
@@ -71,6 +71,20 @@ public class Login extends AppCompatActivity {
 
         // Cambiamos de Activity al iniciar sesión
         signUpActivity.setOnClickListener(v -> {
+
+            String nick = nickname.getText().toString();
+            String pass = pw.getText().toString();
+            String n = name.getText().toString();
+            String s = surname.getText().toString();
+            String p = phone.getText().toString();
+
+            if (nick.isEmpty() || pass.isEmpty() || n.isEmpty() || s.isEmpty() || p.isEmpty()) {
+                Toast.makeText(Login.this, "Rellena todos los campos",Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            dbHandler.saveNewUser(new User(nick,n,s,p,pass,null,null,null,null,"user"));
+
             Intent intent=new Intent(Login.this, Home.class);
             startActivity(intent);
             finish();

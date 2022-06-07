@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/drawable/ajustes.xml" value="0.2465" />
+        <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/drawable/background_circle.xml" value="0.183" />
         <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/drawable/bg_ajustes.xml" value="0.124" />
         <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/drawable/bg_catalogo.xml" value="0.2465" />
         <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/drawable/bg_cerrar_sesion.xml" value="0.2465" />
@@ -18,6 +19,7 @@
         <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/layout/activity_user_data.xml" value="0.264" />
+        <entry key="..\:/Users/dmendez/git/PFC/app/src/main/res/layout/content_list2.xml" value="0.18854166666666666" />
       </map>
     </option>
   </component>

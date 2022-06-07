@@ -5,12 +5,14 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class UserDbHelper extends SQLiteOpenHelper {
+import java.util.ArrayList;
+
+public class DbHandler extends SQLiteOpenHelper {
 
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "Optica.db";
 
-    public UserDbHelper(Context context) {
+    public DbHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -19,8 +21,7 @@ public class UserDbHelper extends SQLiteOpenHelper {
 
         // Create Table Users
         db.execSQL("CREATE TABLE " + UserContract.UserEntry.TABLE_NAME + " ("
-                + UserContract.UserEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + UserContract.UserEntry.NICKNAME + " TEXT NOT NULL,"
+                + UserContract.UserEntry.NICKNAME + " TEXT PRIMARY KEY,"
                 + UserContract.UserEntry.NAME + " TEXT NOT NULL,"
                 + UserContract.UserEntry.SURNAME + " TEXT NOT NULL,"
                 + UserContract.UserEntry.PHONE + " TEXT NOT NULL,"
@@ -29,28 +30,25 @@ public class UserDbHelper extends SQLiteOpenHelper {
                 + UserContract.UserEntry.HM + " TEXT,"
                 + UserContract.UserEntry.ASTIGMATISMO + " TEXT,"
                 + UserContract.UserEntry.COMMENTS + " TEXT,"
-                + UserContract.UserEntry.ROL + " TEXT NOT NULL,"
-                + "UNIQUE (" + UserContract.UserEntry.NICKNAME + "))");
+                + UserContract.UserEntry.ROL + " TEXT NOT NULL)");
 
         // Create Table Photos
         db.execSQL("CREATE TABLE " + PhotoContract.PhotoEntry.TABLE_NAME + "("
-        + PhotoContract.PhotoEntry._ID + "INTEGER PRIMARY KEY AUTOINCREMENT,"
-        + PhotoContract.PhotoEntry.ID + "TEXT NOT NULL,"
-        + PhotoContract.PhotoEntry.URL + "TEXT NOT NULL,"
-        + "UNIQUE (" + PhotoContract.PhotoEntry.ID + "))");
+        + PhotoContract.PhotoEntry.ID + "TEXT PRIMARY KEY,"
+        + PhotoContract.PhotoEntry.URL + "TEXT NOT NULL)");
 
         // Insert data
         insertDataUser(db);
         insertDataPhoto(db);
     }
-
+    // Datos de prueba
     private void insertDataPhoto(SQLiteDatabase db) {
         savePhoto(db, new Photo("Rayban 341","https://d2r9epyceweg5n.cloudfront.net/stores/001/302/367/products/erika-sepia-341-79f3ad5d443ef35d9115987384356675-640-0.jpg"));
         savePhoto(db, new Photo("Rayban 331","https://d2r9epyceweg5n.cloudfront.net/stores/001/302/367/products/erika-sepia-341-79f3ad5d443ef35d9115987384356675-640-0.jpg"));
         savePhoto(db, new Photo("Rayban 321","https://d2r9epyceweg5n.cloudfront.net/stores/001/302/367/products/erika-sepia-341-79f3ad5d443ef35d9115987384356675-640-0.jpg"));
 
     }
-
+    // Datos de prueba
     private void insertDataUser(SQLiteDatabase db) {
         saveUser(db, new User("admin", "Administrador",
                 "CEO", "626408214",
@@ -67,12 +65,16 @@ public class UserDbHelper extends SQLiteOpenHelper {
     }
 
     public long saveUser(SQLiteDatabase db, User user){
-        db = getWritableDatabase();
         return db.insert(UserContract.UserEntry.TABLE_NAME, UserContract.UserEntry.MIOPIA, user.toContentValues());
     }
 
+    public void saveNewUser(User user){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.insert(UserContract.UserEntry.TABLE_NAME,null, user.toContentValues());
+        db.close();
+    }
+
     public long savePhoto(SQLiteDatabase db, Photo photo){
-        db = getWritableDatabase();
         return db.insert(PhotoContract.PhotoEntry.TABLE_NAME, null, photo.toContentValues());
     }
 
@@ -90,6 +92,28 @@ public class UserDbHelper extends SQLiteOpenHelper {
 
     public Cursor getPhotoById(String id){
         return getReadableDatabase().query(PhotoContract.PhotoEntry.TABLE_NAME,null, PhotoContract.PhotoEntry.ID + "LIKE ?", new String[]{id}, null, null, null, null);
+    }
+
+    public User readUser(String nick){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursorCourses = db.rawQuery("SELECT * FROM " + UserContract.UserEntry.TABLE_NAME + " WHERE " + UserContract.UserEntry.NICKNAME + " LIKE ? ", new String[]{nick});
+        User u = null;
+        if (cursorCourses.moveToFirst()){
+            u = new User(cursorCourses.getString(0),
+                    cursorCourses.getString(1),
+                    cursorCourses.getString(2),
+                    cursorCourses.getString(3),
+                    cursorCourses.getString(4),
+                    cursorCourses.getString(5),
+                    cursorCourses.getString(6),
+                    cursorCourses.getString(7),
+                    cursorCourses.getString(8),
+                    cursorCourses.getString(9));
+        }
+
+        cursorCourses.close();
+        return u;
+
     }
 
     @Override

@@ -30,8 +30,8 @@
              android:paddingTop="0dp"
              android:paddingEnd="5dp"
              android:paddingBottom="0dp"
-             android:src="@drawable/logo"
          />
+        <!--              android:src="@drawable/logo" -->
 
      </LinearLayout>
 

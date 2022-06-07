@@ -26,4 +26,6 @@
     <string name="comentarios">Comentarios</string>
     <string name="escribir_texto">Escribir texto</string>
     <string name="save">Guardar</string>
+    <string name="title_activity_list">List</string>
+
 </resources>
