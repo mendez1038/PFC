@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Optica App</string>
+    <string name="background">Background</string>
+    <string name="logo">logo</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="nickname">Nombre de usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="create_account">Crear cuenta</string>
+    <string name="no_account">¿Aún no tienes cuenta?</string>
+    <string name="forgot_password">¿Olvidaste tu contraseña?</string>
+    <string name="name">Nombre</string>
+    <string name="surname">Apellidos</string>
+    <string name="phone">Telefono</string>
+    <string name="account">¿Ya tienes cuenta?</string>
+    <string name="Profile">Perfil</string>
+    <string name="cataloge">Catálogo</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="Settings">Ajustes</string>
+    <string name="customers">Gestión clientes</string>
+    <string name="management">Gestión catálogo</string>
+    <string name="Empty">Por definir</string>
+    <string name="i_d">I - D</string>
+    <string name="miopia">Miopía</string>
+    <string name="hipermetropia">Hipermetropía</string>
+    <string name="astigmatismo">Astigmatismo</string>
+    <string name="comentarios">Comentarios</string>
+    <string name="escribir_texto">Escribir texto</string>
+    <string name="save">Guardar</string>
+    <string name="title_activity_list">List</string>
+    <string name="username_de_bbdd">Username de BBDD</string>
+    <string name="_0_5_0">0.5 – 0</string>
+    <string name="_0_5_1">0.5 – 0</string>
+    <string name="_1_1_5">1 – 1.5</string>
+    <string name="alert_user">No existe ese usuario</string>
+    <string name="alert_signup">Rellena todos los campos</string>
+    <string name="alert_pass">Contraseña incorrecta</string>
+    <string name="alert_phone">No coincide el teléfono</string>
+
+
+</resources>

@@ -10,20 +10,15 @@ import android.widget.Toast;
 
 public class Home extends AppCompatActivity {
 
-    //Init variables
-    LinearLayout profile;
-    LinearLayout catalogue;
-    LinearLayout settings;
-    LinearLayout logout;
-    LinearLayout customerList;
-    LinearLayout photosList;
+    // Create variables
+    LinearLayout profile,catalogue,settings,logout,customerList,photosList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // Asociamos las variables a sus valores
+        // Init variables
         profile = findViewById(R.id.btn_profile);
         catalogue = findViewById(R.id.btn_catalogue);
         settings = findViewById(R.id.btn_settings);

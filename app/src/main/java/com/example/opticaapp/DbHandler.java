@@ -5,8 +5,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.util.ArrayList;
-
 public class DbHandler extends SQLiteOpenHelper {
 
     public static final int DATABASE_VERSION = 1;
@@ -64,10 +62,12 @@ public class DbHandler extends SQLiteOpenHelper {
                 "1234", "0-0","0-0","0-0","Vista perfecta","user"));
     }
 
+
     public long saveUser(SQLiteDatabase db, User user){
         return db.insert(UserContract.UserEntry.TABLE_NAME, UserContract.UserEntry.MIOPIA, user.toContentValues());
     }
 
+    // Insertar nuevo usuario
     public void saveNewUser(User user){
         SQLiteDatabase db = this.getWritableDatabase();
         db.insert(UserContract.UserEntry.TABLE_NAME,null, user.toContentValues());
@@ -94,6 +94,7 @@ public class DbHandler extends SQLiteOpenHelper {
         return getReadableDatabase().query(PhotoContract.PhotoEntry.TABLE_NAME,null, PhotoContract.PhotoEntry.ID + "LIKE ?", new String[]{id}, null, null, null, null);
     }
 
+    // Consultar usuario por nick
     public User readUser(String nick){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursorCourses = db.rawQuery("SELECT * FROM " + UserContract.UserEntry.TABLE_NAME + " WHERE " + UserContract.UserEntry.NICKNAME + " LIKE ? ", new String[]{nick});

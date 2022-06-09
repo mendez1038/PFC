@@ -4,7 +4,7 @@ import android.content.ContentValues;
 
 public class Photo {
 
-    // Atributos de la clase
+    // Atributos
     private String id;
     private String url;
 
