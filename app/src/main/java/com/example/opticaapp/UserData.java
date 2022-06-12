@@ -11,7 +11,7 @@ public class UserData extends AppCompatActivity {
 
     // Create variables
     TextView nickname,miopia,hm,astigmatismo,comments;
-    User cursorCourses;
+    User user;
     DbHandler db;
 
     @Override
@@ -29,14 +29,14 @@ public class UserData extends AppCompatActivity {
 
 
        // Recoger el nick actual de la sesion
-       cursorCourses = db.readUser("pedroca");
+       user = db.readUser("pedroca");
 
 
-       nickname.setText(cursorCourses.getNickname());
-       miopia.setText(cursorCourses.getMiopia());
-       hm.setText(cursorCourses.getHm());
-       astigmatismo.setText(cursorCourses.getAstigmatismo());
-       comments.setText(cursorCourses.getComments());
+       nickname.setText(user.getNickname());
+       miopia.setText(user.getMiopia());
+       hm.setText(user.getHm());
+       astigmatismo.setText(user.getAstigmatismo());
+       comments.setText(user.getComments());
     }
 
     @Override

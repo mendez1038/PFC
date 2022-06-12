@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:key="profile"
+        android:title="@string/Profile">
+        <!-- Password -->
+        <EditTextPreference
+            android:key="pass"
+            android:title="@string/password"
+            android:summary=""
+            android:selectAllOnFocus="true"
+            android:inputType="textPassword"
+            android:singleLine="true" />
+
+        <!-- Nombre -->
+        <EditTextPreference
+            android:key="name"
+            android:title="@string/name"
+            android:summary=""
+            android:selectAllOnFocus="true"
+            android:inputType="text"
+            android:singleLine="true" />
+
+        <!-- Apellidos -->
+        <EditTextPreference
+            android:key="surname"
+            android:title="@string/surname"
+            android:summary=""
+            android:selectAllOnFocus="true"
+            android:inputType="text"
+            android:singleLine="true" />
+
+        <!-- Telefono -->
+        <EditTextPreference
+            android:key="phone"
+            android:title="@string/phone"
+            android:summary=""
+            android:inputType="phone"
+            android:selectAllOnFocus="true"
+            android:singleLine="true" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="settings"
+        android:title="@string/Settings">
+        <ListPreference
+            android:key="language"
+            android:title="Language"
+            android:defaultValue=""
+            android:entries="@array/languages"
+            android:entryValues="@array/language_values"
+            android:summary="" />
+    </PreferenceCategory>
+</PreferenceScreen>

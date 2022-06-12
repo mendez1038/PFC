@@ -5,13 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Home extends AppCompatActivity {
 
     // Create variables
     LinearLayout profile,catalogue,settings,logout,customerList,photosList;
+    TextView username;
+    DbHandler db;
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,21 @@ public class Home extends AppCompatActivity {
         logout = findViewById(R.id.btn_logout);
         customerList = findViewById(R.id.btn_customerList);
         photosList = findViewById(R.id.btn_photosList);
+        username = findViewById(R.id.textView);
+        db = new DbHandler(Home.this);
+
+
+        // Recoger el nick actual de la sesion
+        user = db.readUser("admin");
+
+        username.setText(user.getNickname());
+
+        if(user.getRol().equals("admin")){
+            profile.setVisibility(View.GONE);
+            catalogue.setVisibility(View.GONE);
+            customerList.setVisibility(View.VISIBLE);
+            photosList.setVisibility(View.VISIBLE);
+        }
 
 
         // Acciones al hacer click en los botones de Perfil, Catalogo, Ajustes, Cerrar Sesión, Lista de Clientes y Lista de Fotos
@@ -40,7 +60,11 @@ public class Home extends AppCompatActivity {
             finish();
         });
 
-        settings.setOnClickListener(v -> Toast.makeText(getApplicationContext(),R.string.Settings,Toast.LENGTH_SHORT).show());
+        settings.setOnClickListener(v -> {
+            Intent intent=new Intent(Home.this, Settings.class);
+            startActivity(intent);
+            finish();
+        });
 
         logout.setOnClickListener(v -> {
             Intent intent=new Intent(Home.this, MainActivity.class);
