@@ -37,6 +37,7 @@
     <string name="alert_pass">Contraseña incorrecta</string>
     <string name="alert_phone">No coincide el teléfono</string>
     <string name="language">Idioma</string>
+    <string name="reference">Referencia</string>
 
 
 </resources>

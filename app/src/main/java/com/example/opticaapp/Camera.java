@@ -41,7 +41,7 @@ public class Camera extends AppCompatActivity {
         take.setOnClickListener((View view) -> {
             int id;
             id = view.getId();
-            if (id == R.id.iv_photo){
+            if (id == R.id.btn_photo){
                 Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(i, 0);
             }

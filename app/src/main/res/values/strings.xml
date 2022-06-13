@@ -36,5 +36,6 @@
     <string name="alert_pass">Wrong password</string>
     <string name="alert_phone">Phone error</string>
     <string name="language">Language</string>
+    <string name="reference">Reference</string>
 
 </resources>
