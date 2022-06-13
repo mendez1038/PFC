@@ -3,9 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Github/PFC/app/src/main/res/layout/activity_camera.xml" value="0.1503623188405797" />
         <entry key="..\:/Github/PFC/app/src/main/res/layout/activity_home.xml" value="0.17831813576494426" />
         <entry key="..\:/Github/PFC/app/src/main/res/layout/activity_login.xml" value="0.14492753623188406" />
-        <entry key="..\:/Github/PFC/app/src/main/res/xml/settings.xml" value="0.1778115501519757" />
+        <entry key="..\:/Github/PFC/app/src/main/res/xml/settings.xml" value="0.33" />
         <entry key="..\:/Users/dmendez/git/app/src/main/res/drawable/background_circle.xml" value="0.243" />
         <entry key="..\:/Users/dmendez/git/app/src/main/res/drawable/btn_corner.xml" value="0.243" />
         <entry key="..\:/Users/dmendez/git/app/src/main/res/drawable/input.xml" value="0.243" />

@@ -1,6 +1,5 @@
 package com.example.opticaapp;
 
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,7 +17,6 @@ public class List extends AppCompatActivity {
     ListView listview;
     ArrayList<String> names;
     DbHandler db;
-    Cursor cursor;
     SimpleCursorAdapter adapter;
 
     @Override
@@ -40,10 +38,7 @@ public class List extends AppCompatActivity {
 
         listview.setAdapter(adapter);
 
-        listview.setOnItemClickListener((AdapterView<?> adapterView, View view, int position, long id) -> {
-
-            Toast.makeText(List.this, "Detalle", Toast.LENGTH_LONG).show();
-        });
+        listview.setOnItemClickListener((AdapterView<?> adapterView, View view, int position, long id) ->Toast.makeText(List.this, "Detalle", Toast.LENGTH_LONG).show());
 
     }
 }

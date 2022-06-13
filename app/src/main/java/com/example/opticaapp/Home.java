@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 public class Home extends AppCompatActivity {
 
@@ -32,6 +32,7 @@ public class Home extends AppCompatActivity {
         photosList = findViewById(R.id.btn_photosList);
         username = findViewById(R.id.textView);
         db = new DbHandler(Home.this);
+
 
 
         // Recoger el nick actual de la sesion
@@ -81,13 +82,21 @@ public class Home extends AppCompatActivity {
             finish();
         });
 
-        photosList.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Photos List",Toast.LENGTH_SHORT).show());
+        photosList.setOnClickListener(v -> {
+            Intent intent=new Intent(Home.this, Camera.class);
+            startActivity(intent);
+            finish();
+        });
 
     }
+
+
 
     // Cancelamos la función de la flecha hacia atrás
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
     }
+
+
 }

@@ -36,6 +36,7 @@
     <string name="alert_signup">Fields are empty</string>
     <string name="alert_pass">Wrong password</string>
     <string name="alert_phone">Phone error</string>
+    <string name="language">Language</string>
 
 
 </resources>

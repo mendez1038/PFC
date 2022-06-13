@@ -48,6 +48,6 @@
             android:entryValues="@array/language_values"
             android:key="language"
             android:summary=""
-            android:title="Language" />
+            android:title="@string/language" />
     </PreferenceCategory>
 </PreferenceScreen>
