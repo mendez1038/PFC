@@ -75,7 +75,11 @@ public class Home extends AppCompatActivity {
             finish();
         });
 
-        customerList.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Customer List",Toast.LENGTH_SHORT).show());
+        customerList.setOnClickListener(v -> {
+            Intent intent=new Intent(Home.this, List.class);
+            startActivity(intent);
+            finish();
+        });
 
         photosList.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Photos List",Toast.LENGTH_SHORT).show());
 

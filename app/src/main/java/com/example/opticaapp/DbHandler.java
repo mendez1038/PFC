@@ -83,7 +83,7 @@ public class DbHandler extends SQLiteOpenHelper {
     }
 
     public Cursor getUserByNick(String nick){
-        return getReadableDatabase().query(UserContract.UserEntry.TABLE_NAME,null, UserContract.UserEntry.NICKNAME + "LIKE ?", new String[]{nick}, null, null, null, null);
+        return getReadableDatabase().rawQuery("SELECT * FROM " + UserContract.UserEntry.TABLE_NAME + " WHERE "+ UserContract.UserEntry.NICKNAME + " LIKE ? ", new String[]{nick});
     }
 
     public Cursor getAllPhotos(){
@@ -91,7 +91,7 @@ public class DbHandler extends SQLiteOpenHelper {
     }
 
     public Cursor getPhotoById(String id){
-        return getReadableDatabase().query(PhotoContract.PhotoEntry.TABLE_NAME,null, PhotoContract.PhotoEntry.ID + "LIKE ?", new String[]{id}, null, null, null, null);
+        return getReadableDatabase().query(PhotoContract.PhotoEntry.TABLE_NAME,null, PhotoContract.PhotoEntry.ID + " LIKE ? ", new String[]{id}, null, null, null, null);
     }
 
     // Consultar usuario por nick

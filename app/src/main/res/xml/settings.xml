@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory
+   <!-- <PreferenceCategory
         android:key="profile"
         android:title="@string/Profile">
-        <!-- Password -->
+         Password
         <EditTextPreference
             android:key="pass"
             android:title="@string/password"
@@ -12,7 +12,7 @@
             android:inputType="textPassword"
             android:singleLine="true" />
 
-        <!-- Nombre -->
+         Name
         <EditTextPreference
             android:key="name"
             android:title="@string/name"
@@ -21,7 +21,7 @@
             android:inputType="text"
             android:singleLine="true" />
 
-        <!-- Apellidos -->
+        Surname
         <EditTextPreference
             android:key="surname"
             android:title="@string/surname"
@@ -30,7 +30,7 @@
             android:inputType="text"
             android:singleLine="true" />
 
-        <!-- Telefono -->
+        Phone
         <EditTextPreference
             android:key="phone"
             android:title="@string/phone"
@@ -38,16 +38,16 @@
             android:inputType="phone"
             android:selectAllOnFocus="true"
             android:singleLine="true" />
-    </PreferenceCategory>
+    </PreferenceCategory> -->
     <PreferenceCategory
         android:key="settings"
         android:title="@string/Settings">
         <ListPreference
-            android:key="language"
-            android:title="Language"
             android:defaultValue=""
             android:entries="@array/languages"
             android:entryValues="@array/language_values"
-            android:summary="" />
+            android:key="language"
+            android:summary=""
+            android:title="Language" />
     </PreferenceCategory>
 </PreferenceScreen>

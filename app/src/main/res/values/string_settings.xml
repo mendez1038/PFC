@@ -5,8 +5,8 @@
         <item>English</item>
     </string-array>
     <string-array name="language_values">
-        <item>Castellano</item>
-        <item>English</item>
+        <item>es</item>
+        <item>en</item>
     </string-array>
 
 
