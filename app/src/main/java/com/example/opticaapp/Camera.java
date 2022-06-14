@@ -70,5 +70,13 @@ public class Camera extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent=new Intent(Camera.this, Home.class);
+        startActivity(intent);
+        finish();
+        //onBackPressed();
+    }
+
 
 }

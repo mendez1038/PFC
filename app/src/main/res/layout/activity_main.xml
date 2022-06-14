@@ -10,30 +10,30 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:contentDescription="@string/background"
+        android:src="@drawable/wallpaper"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#d8000000"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:background="@drawable/background_circle"
+            android:contentDescription="@string/logo"
+            android:paddingStart="5dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="0dp"
+            android:src="@drawable/logo" />
 
 
-    />
-    <!-- android:src="@drawable/wallpaper" -->
-     <LinearLayout
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         android:orientation="vertical"
-         android:gravity="center"
-         android:background="#d8000000">
-
-         <ImageView
-             android:layout_width="110dp"
-             android:layout_height="110dp"
-             android:background="@drawable/background_circle"
-             android:contentDescription="@string/logo"
-             android:paddingStart="5dp"
-             android:paddingTop="0dp"
-             android:paddingEnd="5dp"
-             android:paddingBottom="0dp"
-         />
-        <!--              android:src="@drawable/logo" -->
-
-     </LinearLayout>
+    </LinearLayout>
 
 
 </RelativeLayout>

@@ -146,19 +146,15 @@ public class Login extends AppCompatActivity {
                     if (pPw.equals(user.getPhone())){
 
                         Intent intent = new Intent(Intent.ACTION_SEND);
-
+                        intent.putExtra(Intent.EXTRA_TEXT, user.getPassword());
                         intent.setType("text/plain");
                         intent.setPackage("com.whatsapp");
-
-                        // Give your message here
-                        intent.putExtra(Intent.EXTRA_TEXT, user.getPassword());
-
                         // Checking whether Whatsapp
                         // is installed or not
-                        if (intent.resolveActivity(getPackageManager()) == null) {
+                        /*if (intent.resolveActivity(getPackageManager()) == null) {
                             Toast.makeText(Login.this, "Please install whatsapp first.", Toast.LENGTH_SHORT).show();
                             return;
-                        }
+                        }*/
                         // Starting Whatsapp
                         startActivity(intent);
 
