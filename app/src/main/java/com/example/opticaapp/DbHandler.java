@@ -78,6 +78,12 @@ public class DbHandler extends SQLiteOpenHelper {
         return db.insert(PhotoContract.PhotoEntry.TABLE_NAME, null, photo.toContentValues());
     }
 
+    public void saveNewPhoto(Photo photo){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.insert(PhotoContract.PhotoEntry.TABLE_NAME,null,photo.toContentValues());
+        db.close();
+    }
+
     public Cursor getAllUsers(){
         return getReadableDatabase().query(UserContract.UserEntry.TABLE_NAME,null,null,null,null,null,null, null);
     }

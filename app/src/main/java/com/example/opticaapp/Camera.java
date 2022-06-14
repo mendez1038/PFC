@@ -15,6 +15,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 public class Camera extends AppCompatActivity {
@@ -22,6 +23,9 @@ public class Camera extends AppCompatActivity {
     // Inicializamos variables
     ImageView img;
     Button take, save;
+    String ref, url;
+    EditText et;
+    DbHandler db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,7 @@ public class Camera extends AppCompatActivity {
         img = findViewById(R.id.iv_photo);
         take = findViewById(R.id.btn_photo);
         save = findViewById(R.id.btn_save_photo);
+        et = findViewById(R.id.ref);
         //SharedPreferences preferencias = getSharedPreferences("DB", Context.MODE_PRIVATE);
 
         // Comprobar que tenemos permisos para acceder a la camara
@@ -44,6 +49,14 @@ public class Camera extends AppCompatActivity {
             if (id == R.id.btn_photo){
                 Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(i, 0);
+            }
+        });
+
+        save.setOnClickListener((View view) ->{
+            ref = et.getText().toString();
+            url = img.getDrawable().toString();
+            if(ref != null & url != null ){
+                db.saveNewPhoto(new Photo(ref,url));
             }
         });
     }
@@ -67,6 +80,7 @@ public class Camera extends AppCompatActivity {
             Bundle b = data.getExtras();
             Bitmap bm = (Bitmap) b.get("data");
             img.setImageBitmap(bm);
+
         }
     }
 
