@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class Camera extends AppCompatActivity {
 
@@ -33,6 +34,7 @@ public class Camera extends AppCompatActivity {
         setContentView(R.layout.activity_camera);
 
         // Vinculamos los elementos del XML a variables
+        db = new DbHandler(Camera.this);
         img = findViewById(R.id.iv_photo);
         take = findViewById(R.id.btn_photo);
         save = findViewById(R.id.btn_save_photo);
@@ -55,8 +57,13 @@ public class Camera extends AppCompatActivity {
         save.setOnClickListener((View view) ->{
             ref = et.getText().toString();
             url = img.getDrawable().toString();
-            if(ref != null & url != null ){
+            if(!ref.isEmpty()){
                 db.saveNewPhoto(new Photo(ref,url));
+                Intent intent=new Intent(Camera.this, Home.class);
+                startActivity(intent);
+                finish();
+            } else {
+                Toast.makeText(Camera.this, getString(R.string.insert_ref),Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -64,10 +71,10 @@ public class Camera extends AppCompatActivity {
     private void permisos(){
         int permisos = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
         if (permisos != PackageManager.PERMISSION_GRANTED){
-            Log.i("Aviso", "No se tiene permiso para utilizar la camara");
+            Log.i("Aviso", getString(R.string.not_allow));
             ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA},255);
         } else{
-            Log.i("Mensaje", "Permisos concedidos");
+            Log.i("Mensaje", getString(R.string.allow));
         }
     }
 
@@ -77,9 +84,12 @@ public class Camera extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode == Activity.RESULT_OK){
-            Bundle b = data.getExtras();
-            Bitmap bm = (Bitmap) b.get("data");
-            img.setImageBitmap(bm);
+            Bundle b = data != null ? data.getExtras() : null;
+            if (b != null) {
+                Bitmap bm = (Bitmap) b.get("data");
+                img.setImageBitmap(bm);
+            }
+
 
         }
     }

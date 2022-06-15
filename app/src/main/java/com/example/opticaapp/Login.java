@@ -132,10 +132,10 @@ public class Login extends AppCompatActivity {
             String alertP = getString(R.string.alert_phone);
 
             builder = new AlertDialog.Builder(this);
-            builder.setTitle("Recuperar contraseña");
-            builder.setMessage("Escribe tus datos para recibir tu contraseña por whatsapp");
+            builder.setTitle(getString(R.string.recover_pass));
+            builder.setMessage(getString(R.string.recover_des));
             builder.setView(vista);
-            builder.setPositiveButton("Enviar", (dialog, which) -> {
+            builder.setPositiveButton(getString(R.string.send), (dialog, which) -> {
                 userPw = vista.findViewById(R.id.usernamePw);
                 phonePw = vista.findViewById(R.id.phonePw);
                 String nickPw = userPw.getText().toString();
@@ -149,13 +149,8 @@ public class Login extends AppCompatActivity {
                         intent.putExtra(Intent.EXTRA_TEXT, user.getPassword());
                         intent.setType("text/plain");
                         intent.setPackage("com.whatsapp");
-                        // Checking whether Whatsapp
-                        // is installed or not
-                        /*if (intent.resolveActivity(getPackageManager()) == null) {
-                            Toast.makeText(Login.this, "Please install whatsapp first.", Toast.LENGTH_SHORT).show();
-                            return;
-                        }*/
-                        // Starting Whatsapp
+
+                        // Abrir Whatsapp
                         startActivity(intent);
 
                     } else{
@@ -165,7 +160,7 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this, alertU,Toast.LENGTH_SHORT).show();
                 }
             });
-            builder.setNegativeButton("Cancelar", (dialog, id) -> {});
+            builder.setNegativeButton(getString(R.string.cancel), (dialog, id) -> {});
             dialog = builder.create();
             dialog.show();
 

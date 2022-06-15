@@ -7,7 +7,7 @@
     <string name="nickname">Username</string>
     <string name="password">Password</string>
     <string name="create_account">Create account</string>
-    <string name="no_account">Dont have an account?</string>
+    <string name="no_account">Don\'t have an account?</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="name">Name</string>
     <string name="surname">Surname</string>
@@ -17,8 +17,8 @@
     <string name="cataloge">Catalogue</string>
     <string name="logout">Log Out</string>
     <string name="Settings">Settings</string>
-    <string name="customers">Custormer Manage</string>
-    <string name="management">Catalogue Manage</string>
+    <string name="customers">Customer Manager</string>
+    <string name="management">Catalogue Manager</string>
     <string name="Empty">Empty</string>
     <string name="i_d">L - R</string>
     <string name="miopia">Myopia</string>
@@ -38,6 +38,14 @@
     <string name="alert_phone">Phone error</string>
     <string name="language">Language</string>
     <string name="reference">Reference</string>
-
+    <string name="not_allow">Not allow to use the camera</string>
+    <string name="allow">Permissions accepted</string>
+    <string name="cancel">Cancel</string>
+    <string name="recover_pass">Recover password</string>
+    <string name="send">Send</string>
+    <string name="recover_des">Write your data to receive you password via Whatsapp</string>
+    <string name="take_picture">Take picture</string>
+    <string name="save_picture">Save picture</string>
+    <string name="insert_ref">Insert a reference</string>
 
 </resources>

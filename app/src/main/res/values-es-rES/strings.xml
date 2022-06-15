@@ -38,6 +38,14 @@
     <string name="alert_phone">No coincide el teléfono</string>
     <string name="language">Idioma</string>
     <string name="reference">Referencia</string>
-
+    <string name="not_allow">No se tiene permiso para utilizar la cámara</string>
+    <string name="allow">Permisos concedidos</string>
+    <string name="cancel">Cancelar</string>
+    <string name="recover_pass">Recuperar contraseña</string>
+    <string name="send">Enviar</string>
+    <string name="recover_des">Escribe tus datos para recibir tu contraseña por whatsapp</string>
+    <string name="take_picture">Sacar foto</string>
+    <string name="save_picture">Guardar foto</string>
+    <string name="insert_ref">Escribe la referencia</string>
 
 </resources>
